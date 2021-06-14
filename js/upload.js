@@ -1,4 +1,6 @@
-export default function upload(files) {
+const d = document;
+
+export default function upload(files, input) {
   const uploader = (file) => {
     const xhr = new XMLHttpRequest(),
       formData = new FormData();
@@ -21,5 +23,34 @@ export default function upload(files) {
     xhr.send(formData);
   };
 
-  files.forEach((el) => uploader(el));
+  const progressUpload = (file) => {
+    const $progress = d.createElement("progress"),
+      $p = d.createElement("p"),
+      $div = d.getElementById("progress");
+
+    $progress.value = 0;
+    $progress.max = 100;
+    $progress.classList.add("progress");
+
+    $div.appendChild($progress);
+    $div.appendChild($p);
+
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(file);
+    fileReader.addEventListener("progress", (e) => {
+      let progress = parseInt((e.loaded * 100) / e.total);
+      $progress.value = progress;
+      $p.innerHTML = `tu archivo ${file.name} -- ${progress}%`;
+    });
+    fileReader.addEventListener("loadend", (e) => {
+      uploader(file);
+      setTimeout(() => {
+        $div.removeChild($progress);
+        $div.removeChild($p);
+        input.value = "";
+      }, 3000);
+    });
+  };
+
+  files.forEach((el) => progressUpload(el));
 }

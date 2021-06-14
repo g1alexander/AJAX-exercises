@@ -69,12 +69,45 @@ nav.hidden-burger {
   width: 100%;
 }
 /* ----------- */
+/* upload */
+.progress {
+  margin-top: 2rem;
+}
+.drop-zone {
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  border: thin dotted #000;
+  width: 80%;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.drop-zone.is-active {
+  border: thick dashed #000;
+  background-color: green;
+  animation: pulse 1.5s infinite;
+  animation-timing-function: linear;
+}
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+/* ----------- */
 /* FOOTER */
 footer {
   text-align: center;
   margin: 2rem 0 2rem 0;
 }
 /* ----------- */
+/* RESPONSIVE */
 @media screen and (max-width: 699px) {
   header {
     padding: 1rem 4rem 1rem 4rem;
@@ -83,7 +116,6 @@ footer {
     padding: 0 4rem 0 4rem;
   }
 }
-/* RESPONSIVE */
 @media screen and (max-width: 536px) {
   header {
     padding: 1rem 2rem 1rem 2rem;
