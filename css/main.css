@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #f5f5f5;
+  font-family: "Quicksand", sans-serif;
+}
+/* HEADER */
+header {
+  background-color: #feeed6;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 7rem 1rem 7rem;
+  align-items: center;
+}
+
+header .menu a {
+  color: #e79141;
+  padding-right: 0.6rem;
+  text-decoration: none;
+}
+
+header .menu a:hover {
+  text-decoration: underline;
+  color: #bb712c;
+}
+header .burger {
+  font-size: 1.5rem;
+  color: #bb712c;
+}
+header .hidden {
+  display: none;
+}
+nav {
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+nav a {
+  font-size: 1.5rem;
+  margin: 1rem 0 1rem 0;
+  color: white;
+}
+nav.hidden-burger {
+  display: none;
+}
+/* ---------- */
+/* CONTENT */
+.content {
+  padding: 0 7rem 0 7rem;
+}
+.content h1 {
+  margin: 1rem 0 1rem 0;
+}
+
+.content p {
+  margin: 1rem 0 1rem 0;
+}
+.content img {
+  width: 100%;
+}
+/* ----------- */
+/* FOOTER */
+footer {
+  text-align: center;
+  margin: 2rem 0 2rem 0;
+}
+/* ----------- */
+@media screen and (max-width: 699px) {
+  header {
+    padding: 1rem 4rem 1rem 4rem;
+  }
+  .content {
+    padding: 0 4rem 0 4rem;
+  }
+}
+/* RESPONSIVE */
+@media screen and (max-width: 536px) {
+  header {
+    padding: 1rem 2rem 1rem 2rem;
+  }
+  .content {
+    padding: 0 2rem 0 2rem;
+  }
+}
+@media screen and (max-width: 411px) {
+  header {
+    position: fixed;
+    top: 0;
+    width: 85%;
+    z-index: 2;
+  }
+  header .hidden {
+    display: initial;
+  }
+  header .menu {
+    display: none;
+  }
+  .content {
+    margin-top: 5rem;
+  }
+}
+@media screen and (max-width: 372px) {
+  .content h1 {
+    font-size: 1.8rem;
+  }
+  .content p {
+    font-size: 1rem;
+  }
+}

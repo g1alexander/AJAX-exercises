@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/88397a3dd3.js"></script>
+    <script src="js/include-html.js"></script>
+    <link rel="shortcut icon" href="assets/kEnAi.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>AJAX exercises</title>
+  </head>
+  <body>
+    <main>
+      <!-- header -->
+      <header>
+        <img src="assets/kEnAi.svg" width="50" height="50" alt="kEnAi" />
+        <div class="menu menu-action">
+          <a href="views/inicio.html">Inicio</a>
+          <a href="views/upload.html">Upload</a>
+          <a href="views/servicios.html">Servicios</a>
+          <a href="views/contacto.html">Contacto</a>
+        </div>
+        <div id="burger" class="burger hidden">
+          <i class="fas fa-bars"></i>
+        </div>
+      </header>
+      <nav id="nav" class="hidden-burger menu-action">
+        <a href="views/inicio.html">Inicio</a>
+        <a href="views/upload.html">Upload</a>
+        <a href="views/servicios.html">Servicios</a>
+        <a href="views/contacto.html">Contacto</a>
+      </nav>
+
+      <!-- Contenido -->
+      <div id="content" class="content"></div>
+      <!-- footer -->
+      <div data-include="views/layouts/footer.html"></div>
+    </main>
+
+    <script src="js/main.js" type="module"></script>
+  </body>
+</html>
