@@ -42,3 +42,46 @@
   ```
   - el 1 y 2 evento lo usamos para hacer una mejor intereancion del usuario(ux de usuario)
   - el 3 se cuando alguien lanza de archivo y es en el donde hacemos la funcion de subir el archivo al servidor
+
+---
+
+### **Notas:** ejercicio 6 - Envio de formulario por medio de un api (formsubmit.co)
+
+- Para enviar los datos de un formulario generalmente hago esto:
+  ```js
+  const res = await fetch("urlll", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({
+      name: form.nombre.value,
+      email: form.correo.value,
+      asunto: form.asunto.value,
+      message: form.comentarios.value,
+    }),
+  });
+  const json = await res.json();
+  ```
+  - Todo ese **body** me lo puedo ahorrar poniendo el codigo de abajo y esto ya toma todos los valores que hay en el formulario y los envia, amazing :)
+  ```js
+  {
+    body: new FormData(nombre_formulario);
+  }
+  ```
+
+---
+
+### **Notas:** ejercicio 7 - Envio de formulario por medio de php 
+- para subir datos desde el frontend al backend es muy important configurar los **cors** y las **headers** estas configuraciones hay que hacerlas porque la configuracion por defecto solo permite que se realicen peticones **HTTP** en el servidor en que se encuentre y no desde otros servidores
+- **Notas de PHP**
+  - se puede enviar HTML al correo 
+  - la funcion **mail()** solo se envia si esta en un servidor
+  - los **headers** se configuran asi:
+  ```php
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Headers: *");
+    header("Content-type: application/json");
+  ``` 
+  - la funcion **$_SERVER["HTTP_HOST"]** me permite saber el nombre del servidor

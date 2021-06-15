@@ -1,0 +1,45 @@
+<h1>Formulario</h1>
+<!-- Formulario de contacto -->
+<section id="seccion14">
+  <form id="form-contact" class="form">
+    <input
+      type="text"
+      name="nombre"
+      placeholder="escribe tu nombre"
+      title="el nombre solo acepta letras y espacios"
+      pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+      required
+    />
+    <input
+      type="email"
+      name="correo"
+      placeholder="escribe tu email"
+      title="email incorrecto"
+      pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$"
+      required
+    />
+    <input
+      type="text"
+      name="asunto"
+      placeholder="escribe tu asunto"
+      title="asunto no puede ir vacio"
+      required
+    />
+
+    <textarea
+      name="comentarios"
+      cols="50"
+      rows="5"
+      placeholder="escribe tus comentarios"
+      title="Los comentarios solo deben tener max 255 caracteres"
+      data-pattern="^.{1,255}$"
+      required
+    ></textarea>
+
+    <input type="submit" value="enviar" />
+  </form>
+  <div id="loader" class="loader hidden">
+    <img src="/assets/loader.svg" width="70" height="70" />
+  </div>
+  <p id="submitOk" class="submit-ok hidden"></p>
+</section>

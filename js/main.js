@@ -1,13 +1,16 @@
 import menu from "./menu_burger.js";
 import navegation from "./navegation.js";
 import upload from "./upload.js";
+import ContactForm from "./ContactForm.js";
 
 const d = document;
 
 d.addEventListener("DOMContentLoaded", (e) => {
   menu("#burger", "i", d.querySelector("nav"), d.querySelector("#burger i"));
 
-  navegation("./views/upload.html", ".content");
+  // navegation("./views/form.html", ".content");
+
+  ContactForm();
 });
 
 d.addEventListener("click", (e) => {
