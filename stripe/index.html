@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Stripe</title>
+  </head>
+  <body>
+    <!-- Stripe cards -->
+    <main>
+      <h1>Pasarela de Pagos con Stripe</h1>
+      <div id="articles" class="container"></div>
+    </main>
+
+    <template id="templete-article">
+      <article>
+        <img src="" />
+        <div>
+          <h3></h3>
+          <h5></h5>
+          <button>Comprar</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="js/main.js" type="module"></script>
+  </body>
+</html>
