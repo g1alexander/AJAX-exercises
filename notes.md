@@ -140,3 +140,10 @@
 - Referencias:
   - [Libreria utilizazda en este ejercicio](http://showdownjs.com/)
   - [Mas librerias que se pueden utilizar para pasar codigo **markdown** a **HTML**](https://css-tricks.com/choosing-right-markdown-parser/)
+
+---
+
+### **Notas:** ejercicio 10 - Pokeapi
+
+- Nota importante: Los preloaders Se ponen dentro de las peticones **AJAX** y se facilita mucho cuando usas **Fetch async**
+- Los ciclo **for** tradicionales permiten hacer esperar petiones **AJAX** algo que no sucede con los **foreach** 
