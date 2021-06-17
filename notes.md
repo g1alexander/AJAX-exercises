@@ -129,3 +129,14 @@
       }
     });
   ```
+
+---
+
+### **Notas:** ejercicio 9 - Blog con Markdown
+
+- Atraves de diferentes librerias nos permite pasar codigo **markdown** a formato **HTML**
+- Esto nos permite no depender de CMS como **workpress**, **drupal**, etc...
+- Estossitios web son muy utilizados para blogs, debido a su facilidad de redaccion ya que escribir en formato markdown es muy sencillo y practico
+- Referencias:
+  - [Libreria utilizazda en este ejercicio](http://showdownjs.com/)
+  - [Mas librerias que se pueden utilizar para pasar codigo **markdown** a **HTML**](https://css-tricks.com/choosing-right-markdown-parser/)
