@@ -146,4 +146,20 @@
 ### **Notas:** ejercicio 10 - Pokeapi
 
 - Nota importante: Los preloaders Se ponen dentro de las peticones **AJAX** y se facilita mucho cuando usas **Fetch async**
-- Los ciclo **for** tradicionales permiten hacer esperar petiones **AJAX** algo que no sucede con los **foreach** 
+- Los ciclo **for** tradicionales permiten hacer esperar petiones **AJAX** algo que no sucede con los **foreach**
+
+---
+
+### **Notas:** ejercicio 11 - TvMaze
+
+- Nota: Cuando hacemos un buscador cada persona al final siempre tiene el impulso de presionar enter. por esa razon en los buscardores es bueno hacerlos con el evento de presionar enter y no con el evento **submit** de un formulario
+
+- Me falto manipular cuando el array me llega vacio (recuerda que eso es muy importante para la interaccion con el usuario)
+
+- para eliminar el loader puede haber resetado asi: **innerHTML = ""** f :v
+
+- es muy importante validar que nos llegen los datos y si no es asi, hacerlo saber a la interfaz, yo puse que no se mostrara los datos de los shows que no traian imaganes pero tenia que valiar que si no llegaba la imagen poder una imagen generica que proporcionaba tvmaze
+
+- de igual manera los enlaces, textos, etc ...
+
+---
