@@ -163,3 +163,14 @@
 - de igual manera los enlaces, textos, etc ...
 
 ---
+
+### **Notas:** ejercicio 12 - buscador de canciones
+
+- Nota sobre css: para invertir el orden de las columnas con **display: flex;** puedes utilizar **flex-direction: column-reverse**
+- Nota sobre css: si pintamos algun texto que viene con saltos de lineas pero no se muestran en el body, podemos aplicar esta propiedad y muestra la info con los saltos
+  ```css
+  .song blockquote {
+    white-space: pre-wrap;
+  }
+  ```
+- Nota: cuando tenemos que hacer dos peticiones **http** simultaneas siempre hay que hacerlas como escribir en el **ejercicio 8 - pasarela de pago** (**promise.all()**) pero algo ademas que puedes hacer es destructurar ese **promise.all()**, esto es algo avanzado que libreria como **React** hacen mucho, la destructuracion se puede hacer con **arrays** y **objetos** y eso lo vi en el curso (que no se te olvide :)

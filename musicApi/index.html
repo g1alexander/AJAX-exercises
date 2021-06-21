@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Music api</title>
+  </head>
+  <body>
+    <h1>Buscador de canciones</h1>
+    <form id="searchSong">
+      <input
+        type="text"
+        placeholder="Nombre del artista"
+        name="artist"
+        id="artist"
+      />
+      <input
+        type="text"
+        placeholder="Nombre de la cancion"
+        name="song"
+        id="song"
+      />
+      <input type="submit" value="Buscar cancion" />
+    </form>
+
+    <img class="loader" src="/assets/loader.svg" alt="cargando" />
+
+    <aside class="error"></aside>
+    <main>
+      <article class="artist"></article>
+      <article class="song"></article>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
