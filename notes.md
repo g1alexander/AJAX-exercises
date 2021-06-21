@@ -174,3 +174,9 @@
   }
   ```
 - Nota: cuando tenemos que hacer dos peticiones **http** simultaneas siempre hay que hacerlas como escribir en el **ejercicio 8 - pasarela de pago** (**promise.all()**) pero algo ademas que puedes hacer es destructurar ese **promise.all()**, esto es algo avanzado que libreria como **React** hacen mucho, la destructuracion se puede hacer con **arrays** y **objetos** y eso lo vi en el curso (que no se te olvide :)
+
+---
+
+### **Notas:** ejercicio 13 - selects anidados
+
+- no hubo notas, lo hice muy bien :)
