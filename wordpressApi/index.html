@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Wordpress Api</title>
+  </head>
+  <body>
+    <h1>Wordpress Api</h1>
+    <article id="site" class="site"></article>
+    <section id="posts" class="posts"></section>
+    <img src="/assets/loader.svg" class="loader" alt="" />
+
+    <template id="post-template">
+      <article class="post">
+        <img class="post-image" />
+        <aside>
+          <h2 class="post-title"></h2>
+          <figure class="post-author"></figure>
+          <small class="post-date"></small>
+          <a target="_blank" class="post-link">Ver publicacion original</a>
+          <p class="post-excerpt"></p>
+          <div class="post-categories"></div>
+          <div class="post-tags"></div>
+          <details class="post-content">
+            <summary>Ver contenido de la publicacion</summary>
+            <article></article>
+          </details>
+        </aside>
+      </article>
+      <hr />
+    </template>
+
+    <script src="main.js"></script>
+  </body>
+</html>

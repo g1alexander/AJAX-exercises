@@ -180,3 +180,65 @@
 ### **Notas:** ejercicio 13 - selects anidados
 
 - no hubo notas, lo hice muy bien :)
+
+---
+
+### **Notas:** ejercicio 14 - Wordpress API
+
+- Esto es increible, wordpress ofrece una api rest con la que puedes interactuar con un wordpress y consumir sus datos (el consumo de datos dependera de la seguridad del sitio, hay sitios en lo que esta opcion esta desabilitada, el sitio de jquery y la casa blanca lo tienen bloqueado)
+
+- El profe nos paso unos links importantes que hay que mirar
+
+  - [Pagina oficial de wordpress para desarrollador sitios](https://wordpress.org/)
+  - [The loop de wordpress para publicaciones (caja negra)](https://codex.wordpress.org/The_Loop)
+  - [rest api de wordpress](https://developer.wordpress.org/rest-api/)
+  - [endpoints del rest api](https://developer.wordpress.org/rest-api/reference/)
+  - [endpoint para traer post de un sitio en wordpress](https://developer.wordpress.org/rest-api/reference/posts/)
+  - [curso de wordpress del profe Jon](https://www.youtube.com/playlist?list=PLvq-jIkSeTUZDOcKsQz79wnYlTvmAdLkj)
+
+- Para consultar el api de cual sitio web es recomendable seguir un orden cuando estemos consultando mediante **HTTP**, porque esto nos permitira que podamos reutilizar el codigo
+
+  ```js
+  (DOMAIN = "https://elsitiodewordpressabuscar.com"),
+    (SITE = `${DOMAIN}/wp-json`),
+    (API_WP = `${SITE}/wp/v2`),
+    (POSTS = `${API_WP}/posts`),
+    (PAGES = `${API_WP}/pages`),
+    (CATEGORIES = `${API_WP}/categories`);
+  ```
+
+  - esta es la estructura y nos permitira buscar cualquier sitio sin necesidad de ser complejo cambiar el codigo, lo unico a cambiar es el url
+    - **SITE** nos permite traer la informacion del sitio.
+    - **API_WP** nos permite acceder a la **api de wordpress**
+    - los demas son los endpoints la cual nos proporciona la **api de wordpress**
+
+- **NOTA IMPORTANTE:** la ruta de los posts del api de wordpress es asi: **https://elsitiodewordpressabuscar.com/wp-json/wp/v2/posts**. que pasa con esto?
+- sucede que este endpoint solo trae cierta informacion y la informacion de autores, images, tags y algunos otros solo trae los **id**.
+- esto deriba que tengamos que recurrir a mas llamados mediante **fetch** para traer los datos (como vimos en el ejercicio de pokeapi)
+- Si tenemos que realizar todos estos llamados eso deribaria que por cada carga de la pagina haria 40 peticiones, lo cual tendria un coste muy grande
+
+  - wordpress nos brida una solucion al endpoint en cuestion se le puede poner un parametro especial el cual es **htpps://.../wp-json/wp/v2/post?\_embed** y con esto ya nos traeria los datos que no venian anterior mente
+  - detallo esto porque aparte de ser super importante es que esto no viene muy explicado en la doc de wordpress
+  - el profe Jon fue enfatico en decir que este tipo de cosas pueden pasar y si suceden debemos indagar si hay solucion mas optima para manejar una api
+  - esas soluciones las podemos hallar en las foros (ten en cuenta que 90% de las dificultades que te surgan , otras personas ya pasaron por eso)
+  - y si por alguna razon surgen en un proyecto profesional en el cual estemos pago por el servicio, preguntar a los creadores de la api y hay maneras mas optimas (cuando la doc no es muy buena)
+  - conclusion: no tengas miedo de investigar y mas importante, de preguntar :)
+
+- Para lograr hacer un scroll infinito o pagina en nuestros sitios web, la **API rest** que consultemos debe tener un paginado que facilite esa tarea
+- este paginado variara dependiendo de la **api** pero el codigo que iria para lograr un scroll infinto se veria asi:
+
+  ```js
+  //este ejercicio esta en la carpeta de wordpressApi archivo main.js
+  window.addEventListener("scroll", (e) => {
+    const { scrollTop, clientHeight, scrollHeight } = d.documentElement;
+
+    if (scrollTop + clientHeight >= scrollHeight) {
+      //cambiar de pagina
+      page++;
+      //consultar el endpoint
+      getPosts();
+    }
+  });
+  ```
+
+---
